@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="css/popup.css">
+    <link type="text/css" rel="stylesheet" href="css/cookieviz.css">
+    <link type="text/css" rel="stylesheet" href="css/icons.css">
+    <link href="fonts/Roboto-Regular.ttf" rel="stylesheet">
+    <link href="fonts/OpenSans-Regular.ttf" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="icons/cookie-viz-favicon.png">
+
+    <title> PlugIn CookieViz</title>
+
+</head>
+<!--Body Start -->
+
+<body>
+
+    <!-- Grid Start-->
+    <div class="conteneur-grid">
+
+        <!--Header Start-->
+        <header>
+
+
+
+            <!-- General Nav Start -->
+            <nav id="generalnav">
+                <button class="active" id="ma_navigation">
+                    <h2 class="translate" id="navigate"> MA NAVIGATION</h2>
+
+                </button>
+                <button class="inactive" id="mes_droits">
+                    <h2 class="translate" id="rights"> MES DROITS </h2>
+
+                    <!--HEADER-->
+                </button>
+            </nav>
+            <!--General Nav End-->
+        </header>
+
+
+        <!--Header End-->
+
+
+
+        <!--SecondPart Start-->
+
+        <section id="hide" style="display: none">
+
+
+            <!--SecondPart Contents-->
+            <div id="secondPartContents">
+
+                <!-- Echange avec d'autres sites Start -->
+                <div id="large_frame">
+                    <div id="largeFrameContents">
+
+                        <div id=title>
+                            <h2> <span class="translate" id="head_tracking"> LES ÉCHANGES DE </span>
+                                <select class="visited_choice" id="visited_list_expanded"> </select>
+                                <span class="translate" id="tail_tracking">AVEC D'AUTRES SITES </span>
+                            </h2>
+                        </div>
+
+                        <div class="visualisation" id="cookieviz" alt="visualisation des cookies">
+                        </div>
+
+                        <div id="cookieVizLegend">
+                            <ul id="legendList">
+                                <li class="translate" id="autresSites"> Site visité</li>
+                                <li class="translate" id="sites"> Sites tiers</li>
+                                <li class="translate" id="echanges"> Échanges avec cookies </li>
+                            </ul>
+
+                            <button id="legend">
+                                <h2 class="translate" id="legende"> LÉGENDE</h2> <img id="lessBlue" class="lessBlue"
+                                    alt="moreBlue">
+                            </button>
+                        </div>
+                        <div id="zoom">
+                            <button class="zoom"> <img src="../icons/zoomMoins.svg" id="zoomMoins"> </button>
+                            <button class="zoom"> <img src="../icons/zoomPlus.svg" id="zoomPlus"> </button>
+                            <button class="zoom"> <img src="../icons/hand.svg" id="hand"> </button>
+                        </div>
+                        <!-- <button id="cookieVizDeux"> <img src="../icons/moreBlue.svg" alt="Ouvrir le logiciel CookieViz"
+                                id="moreBlue">
+                            <h2> LOGICIEL</h2>
+                        </button> -->
+
+                    </div>
+
+                    <iframe translatesrc="cookie.html" class="translate blocMesDroits" id="largeFrameDroits"
+                        style="display :none;width: 420px;"></iframe>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <div class="bloc" style="display:none" id="mesDroitsContentsLarge"> </div>
+        <!--Second Part End-->
+
+        <!--General Contents-->
+        <section id=frame>
+
+            <div id="generalContents">
+
+
+                <!--<h2> MA NAVIGATION </h2> -->
+
+                <div class="bloc">
+
+                    <select class="visited_choice" id="visited_list">
+                    </select>
+
+                    <button class=twitter id="twitterButton"> <svg class="twitter" data-name="twitter" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 40.53 40.53">
+                            <g id="ea26899d-2afa-40c4-9684-a1508a9a0e54" data-name="Ellipse 9">
+                                <circle cx="20.26" cy="20.26" r="19.76"
+                                    style="fill:#fff;stroke:#282e42;stroke-miterlimit:10" />
+                                <circle cx="20.26" cy="20.26" r="19.24"
+                                    style="fill:none;stroke:#282e42;stroke-miterlimit:10" />
+                            </g>
+                            <path id="a67b2846-7768-401e-a05f-034fc4bd8002" data-name="Tracé 2561"
+                                d="M16.37,25a4.2,4.2,0,0,1-3.78-2.84h1.64a4.37,4.37,0,0,1-3.09-4.05l1.66.46.07-.09a4.21,4.21,0,0,1-1.15-5.39,11.83,11.83,0,0,0,3.75,3,11.09,11.09,0,0,0,4.58,1.23,11.11,11.11,0,0,1,.12-1.83A4.05,4.05,0,0,1,25,12.47a4.14,4.14,0,0,1,1.78.91.61.61,0,0,0,.71.19c.69-.27,1.39-.51,2.11-.76a5,5,0,0,1-1.53,2.12l2-.53.09.07c-.56.56-1.1,1.15-1.69,1.67a.8.8,0,0,0-.31.68A11.52,11.52,0,0,1,10.73,26.88l-.29-.19A8.31,8.31,0,0,0,16.37,25Z"
+                                transform="translate(-0.03 -0.21)" style="fill:#282e42" />
+                        </svg>
+                    </button>
+                    <div class="b1_2">
+                        <h2 class="translate" id="exchange"> ÉCHANGE AVEC </h2>
+                    </div>
+
+                    <div class="b1_3">
+                        <p class="textbloc"> <strong id="nb_thirds"> 0 </strong> <br>
+                        <p class="texte-right translate" id="exchange_with"> sites au
+                            moyens de
+                            cookies. </p>
+                        </p>
+                    </div>
+
+                </div>
+
+                <!--BLOC-->
+                <div class="bloc">
+
+                    <p class="textbloc"> <em id="nb_exists"> 0 </em> <span class="translate" id="read_cookies">de ces
+                            sites ont lu des cookies déjà déposés lors
+                            de votre
+                            navigation. </span></p>
+                    <br />
+                    <p class="textbloc"> <em id="nb_news"> 0 </em> <span class="translate" id="write_cookies"> ont
+                            déposés de nouveaux cookies. </span></p>
+
+                </div>
+
+                <!--BLOC-->
+                <div class="bloc">
+
+                    <div class="b3_1">
+                        <h2 class="translate" id="following"> LES SITES VOUS SUIVANT LE PLUS </h2>
+                        <button class="twitter" id="twitterPodium"> <svg class="twitter" data-name="twitter"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.53 40.53">
+                                <g id="ea26899d-2afa-40c4-9684-a1508a9a0e54" data-name="Ellipse 9">
+                                    <circle cx="20.26" cy="20.26" r="19.76"
+                                        style="fill:#fff;stroke:#282e42;stroke-miterlimit:10" />
+                                    <circle cx="20.26" cy="20.26" r="19.24"
+                                        style="fill:none;stroke:#282e42;stroke-miterlimit:10" />
+                                </g>
+                                <path id="a67b2846-7768-401e-a05f-034fc4bd8002" data-name="Tracé 2561"
+                                    d="M16.37,25a4.2,4.2,0,0,1-3.78-2.84h1.64a4.37,4.37,0,0,1-3.09-4.05l1.66.46.07-.09a4.21,4.21,0,0,1-1.15-5.39,11.83,11.83,0,0,0,3.75,3,11.09,11.09,0,0,0,4.58,1.23,11.11,11.11,0,0,1,.12-1.83A4.05,4.05,0,0,1,25,12.47a4.14,4.14,0,0,1,1.78.91.61.61,0,0,0,.71.19c.69-.27,1.39-.51,2.11-.76a5,5,0,0,1-1.53,2.12l2-.53.09.07c-.56.56-1.1,1.15-1.69,1.67a.8.8,0,0,0-.31.68A11.52,11.52,0,0,1,10.73,26.88l-.29-.19A8.31,8.31,0,0,0,16.37,25Z"
+                                    transform="translate(-0.03 -0.21)" style="fill:#282e42" />
+                            </svg>
+                        </button>
+                    </div>
+                    <br>
+
+                    <div class="b3_2">
+                        <svg id="podium" data-name="podium" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 32">
+                            <rect id="ea059596-fbb9-4293-bffa-8ec7ed9bd745" data-name="Rectangle 4132" x="14" width="11"
+                                height="32" style="fill:#e94765" />
+                            <rect id="a670a706-cf38-4689-aa8e-2107a06fb0f9" data-name="Rectangle 4133" y="12" width="11"
+                                height="20" style="fill:#e94765" />
+                            <rect id="f5f1747b-6637-4d86-af88-0ac56663e565" data-name="Rectangle 4134" x="28" y="23"
+                                width="11" height="9" style="fill:#e94765" />
+                        </svg>
+
+                        <div class="podium_txt">
+                            <ol>
+                                <li id="podium1"> </li>
+                                <li id="podium2"> </li>
+                                <li id="podium3"> </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Mes droits contents-->
+            <div id="blocMesDroits" style="display: none;">
+                <div class="bloc">
+                    <h2 class="translate" id="understand_my_rights"> COMPRENDRE MES DROITS<br> </h2>
+                </div>
+                <iframe class="translate" translatesrc="contact.html" id="blocContact">
+
+                </iframe>
+
+            </div>
+
+            <!--logo-->
+            <button class="information"> <img src="../icons/gear-solid.svg" id="gear"> </button>
+
+
+            <button class="information" style="display: fixed"> <img src="icons/information.svg" alt="information"
+                    id="information">
+
+            </button>
+
+            <div class="information" id="informationContents" style="display :none">
+                <div class="bloc"> <button id="xMarkinfo"> <img src="icons/xMark.svg" id="xMark" alt="left information"
+                            width="60px"> </button>
+                    <h2 class="translate" id="credits"> INFORMATIONS ET CRÉDITS </h2>
+                </div>
+                <iframe class="translate" translatesrc="credit.html" id="blocCredits">
+
+                </iframe>
+            </div>
+
+            <div id="logoCnil"><img src="icons/logoCnil.png" alt="logotype" width="60px"> </div>
+            <div id="logo" style="display: fixed"> <img src="icons/logo-cookie-viz.png" alt="logotype" width="60px">
+            </div>
+        </section>
+
+        <footer id="footer">
+            <!--- <button onclick="maFonction ();"> <img src="less.svg" alt="less" id="less"> </button> --->
+            <button class="play_pause"> <img id="play" alt=play class="play"> </button>
+            <button id="clear_data"> <img src="icons/trash-fill.svg" alt="clear data" id="trash"> </button>
+            <button class="moreLess"> <img alt="more" id="more" class="more"> </button>
+
+        </footer>
+
+    </div>
+
+
+    <!--FOOTER-->
+
+    <!--Fermeture grille-->
+    </div>
+
+    <!--js-->
+    <script src="js/d3.v4.min.js"></script>
+    <script src="js/d3-legend.min.js"></script>
+    <script src="js/d3-scale-chromatic.v1.min.js"></script>
+    <script src="js/d3-weighted-voronoi.js"></script>
+    <script src="js/d3-voronoi-map.js"></script>
+    <script src="js/d3-voronoi-treemap.js"></script>
+
+    <script src="browser.config.js"></script>
+    <script src="core/database.js"></script>
+    <script src="core/popup.js"></script>
+    <script src="core/controller.js"></script>
+    <script src="visualization/graph.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+/*button*/
+
+button.play_pause {
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    float: right;
+    padding-left: 10px;
+}
+
+button.language,
+button.scan {
+    width: 40px;
+    background: none;
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    float: left;
+    padding-right: 6px;
+}
+
+img.play {
+    content: url("../icons/play.svg");
+}
+
+img.pause {
+    content: url("../icons/pause.svg");
+}
+
+img.more {
+    content: url("../icons/more.svg");
+}
+
+img.less {
+    content: url("../icons/less.svg");
+}
+
+img.lessBlue {
+    content: url("../icons/lessBlue.svg");
+}
+
+img.moreBlue {
+    content: url("../icons/moreBlue.svg");
+}
+
+img#shoppingCart,
+img#consent {
+    width: 50px;
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+/*partie mes droits */
+
+#cookieSvg {
+    width: 35px;
+    float: left;
+    margin-right: 16px;
+}
+
+#terminaux,
+#cookieFirst {
+    width: 200px;
+}
+
+
+#cookieThird {
+    width: 350px;
+}
+
+/*bandeau cookie */
+
+#bandeauCookie {
+    padding: 16px;
+    width: 340px;
+    border: solid 1px #282E42;
+    display: inline-block;
+    margin: 16px;
+    margin-left: 0px;
+}
+
+.blueContour {
+    padding: 5px;
+    margin: 3px;
+    border: solid 1px #282E42;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.pinkContour {
+    padding: 5px;
+    border: solid 3px #fa4564;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 8px;
+    margin-left: 0px;
+}
+
+P.pDroits {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+span .pDroits {
+    font-style: italic;
+    color: #fa4564;
+}
+
+h3.h3Droits{
+    padding-left: 0px;
+}
