@@ -1,0 +1,57 @@
+{
+    "manifest_version": 2,
+    "default_locale": "en",
+
+    "name": "__MSG_extension_name__",
+    "description": "__MSG_extension_description__",
+    "version": "1.6",
+
+    "icons": {
+        "16": "images/cookie-viz-favicon-16.png",
+        "32": "images/cookie-viz-favicon-32.png",
+        "64": "images/cookie-viz-favicon-64.png",
+        "128": "images/cookie-viz-favicon-128.png",
+        "256": "images/cookie-viz-favicon-256.png",
+        "512": "images/cookie-viz-favicon-512.png"
+    },
+
+    "background": {
+        "scripts": [
+            "browser.config.js",
+                  "core/plugins.js",
+                  "core/database.js",
+                  "core/background.js"],
+        "persistent": true
+    },
+
+    "content_scripts": [{
+        "js": [ "content.js" ],
+        "matches": [ "*://example.com/*" ]
+    }],
+
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/cookie-viz-favicon-16.png",
+            "32": "images/cookie-viz-favicon-32.png",
+            "64": "images/cookie-viz-favicon-64.png",
+            "128": "images/cookie-viz-favicon-128.png",
+            "256": "images/cookie-viz-favicon-256.png",
+            "512": "images/cookie-viz-favicon-512.png"
+        }
+    },
+
+    "permissions": ["browsingData",
+        "cookies",
+        "activeTab",
+        "webRequest",
+        "storage",
+        "<all_urls>",
+        "tabs"],
+    
+    "options_ui": {
+        "page": "options.html",
+        "browser_style": true
+      },
+    "default_locale": "en"
+}

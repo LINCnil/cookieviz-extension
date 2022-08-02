@@ -1,0 +1,90 @@
+{
+    "extension_name": {
+        "message": "Extension CookieViz",
+        "description": "Extension web de CookieViz"
+    },
+    "extension_description": {
+        "message": "Cookieviz analyse les interactions entre un navigateur et des sites et serveurs distants.",
+        "description": "Description of the extension."
+    },
+    "navigate":{
+        "message":"MA NAVIGATION",
+        "description": "NAVIGATION popup button."
+    },
+    "rights":{
+        "message":"MES DROITS",
+        "description": "RIGHTS popup button."
+    },
+    "exchange":{
+        "message":"ÉCHANGE AVEC",
+        "description": "EXCHANGE popup text."
+    },
+    "exchange_with":{
+        "message":"sites au moyens de cookies.",
+        "description": "EXCHANGE WITH popup text."
+    },
+    "read_cookies":{
+        "message":"de ces sites ont lu des cookies déjà déposés lors de votre navigation.",
+        "description": "READ COOKIES popup text."
+    },
+    "write_cookies":{
+        "message":"ont déposés de nouveaux cookies.",
+        "description": "WRITE COOKIES popup text."
+    },
+    "following":{
+        "message":"LES SITES VOUS SUIVANT LE PLUS",
+        "description": "FOLLOWING TITLE popup text."
+    },
+    "head_tracking":{
+        "message":"LES ÉCHANGES DE",
+        "description": "HEAD TRACKING popup text."
+    },
+    "tail_tracking":{
+        "message":"AVEC D'AUTRES SITES",
+        "description": "TAIL TRACKING popup text."
+    },
+    "autresSites":{
+        "message":"Site visité",
+        "description": "FIRST PARTY legend popup text."
+    },
+    "sites":{
+        "message":"Sites tiers",
+        "description": "THIRD PARTY legend popup text."
+    },
+    "echanges":{
+        "message":"Échanges avec cookies",
+        "description": "EXCHANGE legend popup text."
+    },
+    "legende":{
+        "message":"LÉGENDE",
+        "description": "LEGENDE legend popup text."
+    },
+    "parameter":{
+        "message":"PARAMÈTRES",
+        "description": "PARAMETER legend popup text."
+    },
+    "type_analyse":{
+        "message":"TYPE D'ANALYSE :",
+        "description": "ANALYSIS TYPE popup text."
+    },
+    "by_tab":{
+        "message":"Par onglets",
+        "description": "BY TAB legend text."
+    },
+    "all_tab":{
+        "message":"Toute la navigation",
+        "description": "ALL TAB legend text."
+    },
+    "visit":{
+        "message":"Visite",
+        "description": "VISIT legend text."
+    },
+    "credits":{
+        "message":"INFORMATIONS ET CRÉDITS",
+        "description": "CREDIT popup text."
+    },
+    "understand_my_rights":{
+        "message":"COMPRENDRE MES DROITS",
+        "description": "UNDERSTAND MY RIGHTS legend text."
+    }
+}

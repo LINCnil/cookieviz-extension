@@ -1,0 +1,666 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		447BDC0F286A04E10052CE4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447BDC0E286A04E10052CE4D /* AppDelegate.swift */; };
+		447BDC13286A04E10052CE4D /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 447BDC11286A04E10052CE4D /* Main.html */; };
+		447BDC15286A04E10052CE4D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 447BDC14286A04E10052CE4D /* Icon.png */; };
+		447BDC17286A04E10052CE4D /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 447BDC16286A04E10052CE4D /* Style.css */; };
+		447BDC19286A04E10052CE4D /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 447BDC18286A04E10052CE4D /* Script.js */; };
+		447BDC1B286A04E10052CE4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447BDC1A286A04E10052CE4D /* ViewController.swift */; };
+		447BDC1E286A04E10052CE4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 447BDC1C286A04E10052CE4D /* Main.storyboard */; };
+		447BDC20286A04E20052CE4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447BDC1F286A04E20052CE4D /* Assets.xcassets */; };
+		447BDC28286A04E20052CE4D /* CookieViz Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 447BDC27286A04E20052CE4D /* CookieViz Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		447BDC2D286A04E20052CE4D /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447BDC2C286A04E20052CE4D /* SafariWebExtensionHandler.swift */; };
+		447BDC30286A04E20052CE4D /* _locales in Resources */ = {isa = PBXBuildFile; fileRef = 447BDC2F286A04E20052CE4D /* _locales */; };
+		447BDC32286A04E20052CE4D /* images in Resources */ = {isa = PBXBuildFile; fileRef = 447BDC31286A04E20052CE4D /* images */; };
+		447BDC34286A04E20052CE4D /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 447BDC33286A04E20052CE4D /* manifest.json */; };
+		447BDC3A286A04E20052CE4D /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 447BDC39286A04E20052CE4D /* popup.html */; };
+		447BDC3C286A04E20052CE4D /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 447BDC3B286A04E20052CE4D /* popup.css */; };
+		447BDC3E286A04E20052CE4D /* popup.js in Resources */ = {isa = PBXBuildFile; fileRef = 447BDC3D286A04E20052CE4D /* popup.js */; };
+		447BDCD9286A0BD20052CE4D /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCD7286A0BD20052CE4D /* options.html */; };
+		447BDCDA286A0BD20052CE4D /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCD7286A0BD20052CE4D /* options.html */; };
+		447BDCDB286A0BD20052CE4D /* options.js in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCD8286A0BD20052CE4D /* options.js */; };
+		447BDCDC286A0BD20052CE4D /* options.js in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCD8286A0BD20052CE4D /* options.js */; };
+		447BDCDE286A0C220052CE4D /* analyses in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCDD286A0C220052CE4D /* analyses */; };
+		447BDCDF286A0C220052CE4D /* analyses in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCDD286A0C220052CE4D /* analyses */; };
+		447BDCE1286A0C380052CE4D /* browser.config.js in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE0286A0C380052CE4D /* browser.config.js */; };
+		447BDCE2286A0C380052CE4D /* browser.config.js in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE0286A0C380052CE4D /* browser.config.js */; };
+		447BDCE9286A0CAD0052CE4D /* images in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE3286A0CAD0052CE4D /* images */; };
+		447BDCEA286A0CAD0052CE4D /* images in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE3286A0CAD0052CE4D /* images */; };
+		447BDCEB286A0CAD0052CE4D /* js in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE4286A0CAD0052CE4D /* js */; };
+		447BDCEC286A0CAD0052CE4D /* js in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE4286A0CAD0052CE4D /* js */; };
+		447BDCED286A0CAD0052CE4D /* css in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE5286A0CAD0052CE4D /* css */; };
+		447BDCEE286A0CAD0052CE4D /* css in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE5286A0CAD0052CE4D /* css */; };
+		447BDCEF286A0CAD0052CE4D /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE6286A0CAD0052CE4D /* fonts */; };
+		447BDCF0286A0CAD0052CE4D /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE6286A0CAD0052CE4D /* fonts */; };
+		447BDCF1286A0CAD0052CE4D /* core in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE7286A0CAD0052CE4D /* core */; };
+		447BDCF2286A0CAD0052CE4D /* core in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE7286A0CAD0052CE4D /* core */; };
+		447BDCF3286A0CAD0052CE4D /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE8286A0CAD0052CE4D /* icons */; };
+		447BDCF4286A0CAD0052CE4D /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCE8286A0CAD0052CE4D /* icons */; };
+		447BDCF6286A0CC00052CE4D /* visualization in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCF5286A0CC00052CE4D /* visualization */; };
+		447BDCF7286A0CC00052CE4D /* visualization in Resources */ = {isa = PBXBuildFile; fileRef = 447BDCF5286A0CC00052CE4D /* visualization */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		447BDC29286A04E20052CE4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 447BDC03286A04E00052CE4D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 447BDC26286A04E20052CE4D;
+			remoteInfo = "CookieViz Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		447BDC46286A04E20052CE4D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				447BDC28286A04E20052CE4D /* CookieViz Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		447BDC0B286A04E10052CE4D /* CookieViz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CookieViz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		447BDC0E286A04E10052CE4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		447BDC12286A04E10052CE4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
+		447BDC14286A04E10052CE4D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		447BDC16286A04E10052CE4D /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		447BDC18286A04E10052CE4D /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		447BDC1A286A04E10052CE4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		447BDC1D286A04E10052CE4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		447BDC1F286A04E20052CE4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		447BDC21286A04E20052CE4D /* CookieViz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CookieViz.entitlements; sourceTree = "<group>"; };
+		447BDC22286A04E20052CE4D /* CookieViz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CookieViz.entitlements; sourceTree = "<group>"; };
+		447BDC27286A04E20052CE4D /* CookieViz Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CookieViz Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		447BDC2C286A04E20052CE4D /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		447BDC2F286A04E20052CE4D /* _locales */ = {isa = PBXFileReference; lastKnownFileType = folder; path = _locales; sourceTree = "<group>"; };
+		447BDC31286A04E20052CE4D /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		447BDC33286A04E20052CE4D /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
+		447BDC39286A04E20052CE4D /* popup.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = popup.html; sourceTree = "<group>"; };
+		447BDC3B286A04E20052CE4D /* popup.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = popup.css; sourceTree = "<group>"; };
+		447BDC3D286A04E20052CE4D /* popup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = popup.js; sourceTree = "<group>"; };
+		447BDC3F286A04E20052CE4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		447BDC40286A04E20052CE4D /* CookieViz_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CookieViz_Extension.entitlements; sourceTree = "<group>"; };
+		447BDCD7286A0BD20052CE4D /* options.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = options.html; sourceTree = "<group>"; };
+		447BDCD8286A0BD20052CE4D /* options.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = options.js; sourceTree = "<group>"; };
+		447BDCDD286A0C220052CE4D /* analyses */ = {isa = PBXFileReference; lastKnownFileType = folder; path = analyses; sourceTree = "<group>"; };
+		447BDCE0286A0C380052CE4D /* browser.config.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = browser.config.js; sourceTree = "<group>"; };
+		447BDCE3286A0CAD0052CE4D /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		447BDCE4286A0CAD0052CE4D /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
+		447BDCE5286A0CAD0052CE4D /* css */ = {isa = PBXFileReference; lastKnownFileType = folder; path = css; sourceTree = "<group>"; };
+		447BDCE6286A0CAD0052CE4D /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		447BDCE7286A0CAD0052CE4D /* core */ = {isa = PBXFileReference; lastKnownFileType = folder; path = core; sourceTree = "<group>"; };
+		447BDCE8286A0CAD0052CE4D /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icons; sourceTree = "<group>"; };
+		447BDCF5286A0CC00052CE4D /* visualization */ = {isa = PBXFileReference; lastKnownFileType = folder; path = visualization; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		447BDC08286A04E10052CE4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		447BDC24286A04E20052CE4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		447BDC02286A04E00052CE4D = {
+			isa = PBXGroup;
+			children = (
+				447BDC0D286A04E10052CE4D /* CookieViz */,
+				447BDC2B286A04E20052CE4D /* CookieViz Extension */,
+				447BDC0C286A04E10052CE4D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		447BDC0C286A04E10052CE4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				447BDC0B286A04E10052CE4D /* CookieViz.app */,
+				447BDC27286A04E20052CE4D /* CookieViz Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		447BDC0D286A04E10052CE4D /* CookieViz */ = {
+			isa = PBXGroup;
+			children = (
+				447BDC0E286A04E10052CE4D /* AppDelegate.swift */,
+				447BDC1A286A04E10052CE4D /* ViewController.swift */,
+				447BDC1C286A04E10052CE4D /* Main.storyboard */,
+				447BDC1F286A04E20052CE4D /* Assets.xcassets */,
+				447BDC21286A04E20052CE4D /* CookieViz.entitlements */,
+				447BDC22286A04E20052CE4D /* CookieViz.entitlements */,
+				447BDC10286A04E10052CE4D /* Resources */,
+			);
+			path = CookieViz;
+			sourceTree = "<group>";
+		};
+		447BDC10286A04E10052CE4D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				447BDC11286A04E10052CE4D /* Main.html */,
+				447BDC14286A04E10052CE4D /* Icon.png */,
+				447BDC16286A04E10052CE4D /* Style.css */,
+				447BDC18286A04E10052CE4D /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		447BDC2B286A04E20052CE4D /* CookieViz Extension */ = {
+			isa = PBXGroup;
+			children = (
+				447BDC2C286A04E20052CE4D /* SafariWebExtensionHandler.swift */,
+				447BDC3F286A04E20052CE4D /* Info.plist */,
+				447BDC40286A04E20052CE4D /* CookieViz_Extension.entitlements */,
+				447BDC2E286A04E20052CE4D /* Resources */,
+			);
+			path = "CookieViz Extension";
+			sourceTree = "<group>";
+		};
+		447BDC2E286A04E20052CE4D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				447BDCF5286A0CC00052CE4D /* visualization */,
+				447BDCE7286A0CAD0052CE4D /* core */,
+				447BDCE5286A0CAD0052CE4D /* css */,
+				447BDCE6286A0CAD0052CE4D /* fonts */,
+				447BDCE8286A0CAD0052CE4D /* icons */,
+				447BDCE3286A0CAD0052CE4D /* images */,
+				447BDCE4286A0CAD0052CE4D /* js */,
+				447BDCE0286A0C380052CE4D /* browser.config.js */,
+				447BDCDD286A0C220052CE4D /* analyses */,
+				447BDCD7286A0BD20052CE4D /* options.html */,
+				447BDCD8286A0BD20052CE4D /* options.js */,
+				447BDC2F286A04E20052CE4D /* _locales */,
+				447BDC31286A04E20052CE4D /* images */,
+				447BDC33286A04E20052CE4D /* manifest.json */,
+				447BDC39286A04E20052CE4D /* popup.html */,
+				447BDC3B286A04E20052CE4D /* popup.css */,
+				447BDC3D286A04E20052CE4D /* popup.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		447BDC0A286A04E10052CE4D /* CookieViz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 447BDC47286A04E20052CE4D /* Build configuration list for PBXNativeTarget "CookieViz" */;
+			buildPhases = (
+				447BDC07286A04E10052CE4D /* Sources */,
+				447BDC08286A04E10052CE4D /* Frameworks */,
+				447BDC09286A04E10052CE4D /* Resources */,
+				447BDC46286A04E20052CE4D /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				447BDC2A286A04E20052CE4D /* PBXTargetDependency */,
+			);
+			name = CookieViz;
+			productName = CookieViz;
+			productReference = 447BDC0B286A04E10052CE4D /* CookieViz.app */;
+			productType = "com.apple.product-type.application";
+		};
+		447BDC26286A04E20052CE4D /* CookieViz Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 447BDC43286A04E20052CE4D /* Build configuration list for PBXNativeTarget "CookieViz Extension" */;
+			buildPhases = (
+				447BDC23286A04E20052CE4D /* Sources */,
+				447BDC24286A04E20052CE4D /* Frameworks */,
+				447BDC25286A04E20052CE4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CookieViz Extension";
+			productName = "CookieViz Extension";
+			productReference = 447BDC27286A04E20052CE4D /* CookieViz Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		447BDC03286A04E00052CE4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					447BDC0A286A04E10052CE4D = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					447BDC26286A04E20052CE4D = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 447BDC06286A04E00052CE4D /* Build configuration list for PBXProject "CookieViz" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 447BDC02286A04E00052CE4D;
+			productRefGroup = 447BDC0C286A04E10052CE4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				447BDC0A286A04E10052CE4D /* CookieViz */,
+				447BDC26286A04E20052CE4D /* CookieViz Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		447BDC09286A04E10052CE4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				447BDCE1286A0C380052CE4D /* browser.config.js in Resources */,
+				447BDCF3286A0CAD0052CE4D /* icons in Resources */,
+				447BDCE9286A0CAD0052CE4D /* images in Resources */,
+				447BDCD9286A0BD20052CE4D /* options.html in Resources */,
+				447BDCEF286A0CAD0052CE4D /* fonts in Resources */,
+				447BDCDB286A0BD20052CE4D /* options.js in Resources */,
+				447BDC15286A04E10052CE4D /* Icon.png in Resources */,
+				447BDC1E286A04E10052CE4D /* Main.storyboard in Resources */,
+				447BDCF6286A0CC00052CE4D /* visualization in Resources */,
+				447BDC19286A04E10052CE4D /* Script.js in Resources */,
+				447BDCED286A0CAD0052CE4D /* css in Resources */,
+				447BDCEB286A0CAD0052CE4D /* js in Resources */,
+				447BDCF1286A0CAD0052CE4D /* core in Resources */,
+				447BDC13286A04E10052CE4D /* Main.html in Resources */,
+				447BDC20286A04E20052CE4D /* Assets.xcassets in Resources */,
+				447BDC17286A04E10052CE4D /* Style.css in Resources */,
+				447BDCDE286A0C220052CE4D /* analyses in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		447BDC25286A04E20052CE4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				447BDCF2286A0CAD0052CE4D /* core in Resources */,
+				447BDCEE286A0CAD0052CE4D /* css in Resources */,
+				447BDCEA286A0CAD0052CE4D /* images in Resources */,
+				447BDCF4286A0CAD0052CE4D /* icons in Resources */,
+				447BDCDF286A0C220052CE4D /* analyses in Resources */,
+				447BDCEC286A0CAD0052CE4D /* js in Resources */,
+				447BDC3C286A04E20052CE4D /* popup.css in Resources */,
+				447BDC3A286A04E20052CE4D /* popup.html in Resources */,
+				447BDCF7286A0CC00052CE4D /* visualization in Resources */,
+				447BDCE2286A0C380052CE4D /* browser.config.js in Resources */,
+				447BDC32286A04E20052CE4D /* images in Resources */,
+				447BDC34286A04E20052CE4D /* manifest.json in Resources */,
+				447BDC30286A04E20052CE4D /* _locales in Resources */,
+				447BDC3E286A04E20052CE4D /* popup.js in Resources */,
+				447BDCDA286A0BD20052CE4D /* options.html in Resources */,
+				447BDCDC286A0BD20052CE4D /* options.js in Resources */,
+				447BDCF0286A0CAD0052CE4D /* fonts in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		447BDC07286A04E10052CE4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				447BDC1B286A04E10052CE4D /* ViewController.swift in Sources */,
+				447BDC0F286A04E10052CE4D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		447BDC23286A04E20052CE4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				447BDC2D286A04E20052CE4D /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		447BDC2A286A04E20052CE4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 447BDC26286A04E20052CE4D /* CookieViz Extension */;
+			targetProxy = 447BDC29286A04E20052CE4D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		447BDC11286A04E10052CE4D /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				447BDC12286A04E10052CE4D /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		447BDC1C286A04E10052CE4D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				447BDC1D286A04E10052CE4D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		447BDC41286A04E20052CE4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		447BDC42286A04E20052CE4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		447BDC44286A04E20052CE4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "CookieViz Extension/CookieViz_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C8972AFDD5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CookieViz Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "CookieViz Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 2.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LINC.CookieViz.extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		447BDC45286A04E20052CE4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "CookieViz Extension/CookieViz_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C8972AFDD5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "CookieViz Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "CookieViz Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 2.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LINC.CookieViz.extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		447BDC48286A04E20052CE4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CookieViz/CookieViz.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C8972AFDD5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CookieViz;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 2.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LINC.CookieViz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		447BDC49286A04E20052CE4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CookieViz/CookieViz.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C8972AFDD5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CookieViz;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 2.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LINC.CookieViz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		447BDC06286A04E00052CE4D /* Build configuration list for PBXProject "CookieViz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				447BDC41286A04E20052CE4D /* Debug */,
+				447BDC42286A04E20052CE4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		447BDC43286A04E20052CE4D /* Build configuration list for PBXNativeTarget "CookieViz Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				447BDC44286A04E20052CE4D /* Debug */,
+				447BDC45286A04E20052CE4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		447BDC47286A04E20052CE4D /* Build configuration list for PBXNativeTarget "CookieViz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				447BDC48286A04E20052CE4D /* Debug */,
+				447BDC49286A04E20052CE4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 447BDC03286A04E00052CE4D /* Project object */;
+}

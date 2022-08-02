@@ -1,4 +1,4 @@
-Extension CookieViz pour Chromium (Français)
+Extension CookieViz pour Safari (Français) -- En cours de développement
 ===
 
 **L'extension CookieViz mesure l'impact des cookies sur votre propre navigateur.**
@@ -8,9 +8,8 @@ Cette extension Cookieviz analyse les interactions entre un navigateur et des si
 
 ## Utilisation
 
-L'extension CookieViz est utilisable sur la plupart des navigateurs reposant sur le navigateur Chromium (Chrome, Opera, Brave, Edge, etc.). L'extension vise à termes à être distribuée sur les boutiques d'applications de ces navigateurs. Les liens vers ces boutiques seront disponibles sur cette page au fil des publications. Pour le navigateur Firefox, l'extension est déjà disponible sur sa [boutique d'application](https://addons.mozilla.org/fr/firefox/addon/cookieviz/).
+Depuis le système d'exploitation MacOs, ouvrez le projet CookieViz.xcodeproj sur Xcode et lancez son exécution. Depuis les préférences de Safari, activez l'extension CookieViz et attribuer les autorisations nécessaires.
 
-Il est possible d'installer l'extension depuis son code source. Les interfaces pour réaliser cette installation varient suivant les navigateurs, ils sont néanmoins dans l'ensemble assez similaires. Par exemple sur Chrome, vous pouvez utiliser l'adresse [chrome://extensions/](chrome://extensions/), activer le mode développeur et utiliser l'option "charger l'extension non empaquetée". 
 
 ## Contribuer
 
@@ -20,7 +19,7 @@ Il est possible d'installer l'extension depuis son code source. Les interfaces p
 
 Pour de plus amples informations, voir le fichier ``LICENSE`` inclus.
 
-# CookieViz Extension for Chromium (English)
+# CookieViz Extension for Safari (English) -- Work in progress
 
 **CookieViz is a vizualization tool allowing to view cookies impact on your browser.**
 
@@ -28,9 +27,7 @@ This Cookieviz extension analyzes interactions between a browser and third parti
 
 ## Usage
 
-The CookieViz extension can be used on most browsers based on the Chromium browser (Chrome, Opera, Brave, Edge, etc.). The extension is intended to be distributed in the application stores of these browsers. Links to these stores will be available on this page as they are published. The extension is already available for [Firefox](https://addons.mozilla.org/fr/firefox/addon/cookieviz/).
-
-It is possible to install the extension from its source code. The interfaces to carry out this installation vary according to the browsers, they are nevertheless on the whole quite similar. For example on Chrome, you can use the address [chrome://extensions/](chrome://extensions/), enable developer mode and use the "load unpackaged extension" option.
+From the MacOs operating system, open the CookieViz.xcodeproj project on Xcode and run it. From Safari preferences, enable the CookieViz extension and assign the necessary permissions.
 
 ## Contribute
 **CookieViz is available under the terms of the GPLv3 license and can be enriched by any of its users.** The most experimented can improve this initial version of our tool or correct potential bugs. Don't forget to submit your contributions *via* pull-requests.
