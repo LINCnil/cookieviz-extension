@@ -197,8 +197,11 @@ function update_graph(nodes, links) {
     simulation.force("link").links(links);
     simulation.alpha(1).restart();
     linkedByIndex ={};
-    links.forEach(d => {
-        linkedByIndex[`${d.source.index},${d.target.index}`] = 1;
-    });
+    if (links.forEach){ //FIXME : links can take multiple forms and foreach does not exists all the times
+        links.forEach(d => {
+            linkedByIndex[`${d.source.index},${d.target.index}`] = 1;
+        });
+    }
+    
 }
 

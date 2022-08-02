@@ -4,7 +4,7 @@
         "description": "Extension web de CookieViz"
     },
     "extensionDescription": {
-        "message": "Cookieviz analyse les interactions entre un navigateur et des sites et serveurs distants. Vous pourrez savoir à quels autres acteurs le site que vous visitez envoie des informations.",
+        "message": "Cookieviz analyse les interactions entre un navigateur et des sites et serveurs distants.",
         "description": "Description of the extension."
     },
     "navigate":{

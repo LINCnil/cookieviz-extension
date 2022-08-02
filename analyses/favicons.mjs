@@ -1,5 +1,9 @@
-import('../js/psl.js');
-import {Favicon} from '../js/favicon.js';
+import "../js/psl.js";
+import { Favicon } from '../js/favicon.js';
+import { getFromDB, WriteToDb } from "../core/database.js"
+import { initDb } from "../core/database.js"
+
+var nwjsBrowser = chrome.webRequest;
 
 const tabFaviconListener = {};
 
@@ -17,7 +21,7 @@ function extractHostname(url, keep_protocol) {
     let hostname;
 
     if (!url) return "";
-    
+
     //find & remove protocol (http, ftp, etc.) and get hostname
     if (url.indexOf("//") > -1) {
         hostname = url.split('/')[2];
@@ -36,28 +40,25 @@ function extractHostname(url, keep_protocol) {
 
 
 function processFaviconRequest(requestdetails) {
-    if (!db) return;
-
     //Parsing all cookies
     let request_url = psl.get(extractHostname(requestdetails.url));
 
-    function checkFavicon(request) {
+    async function checkFavicon(request) {
         favicons_stored.push(request);
-        let txn = db.transaction(["favicons"], 'readonly');
-        let objectStore = txn.objectStore('favicons');
-        var index = objectStore.index('website');
+        var index = await getFromDB(plugins_favicon, "favicons", 'website');
 
         index.get(request).onsuccess = function (event) {
             var cursor = event.target.result;
             if (cursor) {
                 return;
             } else {
-                try{
+                if (!requestdetails.url) return;
+                try {
                     favicon_crawler.get(requestdetails.url, url => {
-                        WriteToDb("favicons", { website: request, favicon: url });
+                        WriteToDb(plugins_favicon, "favicons", { website: request, favicon: url });
                     });
-                }catch(e){
-                    WriteToDb("favicons", { website: request, favicon: null });
+                } catch (e) {
+                    WriteToDb(plugins_favicon, "favicons", { website: request, favicon: null });
                     return;
                 }
             }
@@ -70,7 +71,7 @@ function processFaviconRequest(requestdetails) {
 function initFaviconCrawler(id, url) {
     tabFaviconListener[id] = {
         analysis: function (requestdetails) {
-            processFaviconRequest(requestdetails)
+            //processFaviconRequest(requestdetails)
         }
     };
 
@@ -78,14 +79,12 @@ function initFaviconCrawler(id, url) {
     nwjsBrowser.onBeforeSendHeaders.addListener(tabFaviconListener[id].analysis, {
         urls: ["*://*/*"],
         tabId: id
-        //}, ['requestHeaders', 'extraHeaders'] chrome
-    }, ['requestHeaders']
-    );
+    });
 }
 
 function deleteFaviconCrawler(id) {
     if (tabFaviconListener[id]) {
-        browser.tabs.onUpdated.removeListener(tabFaviconListener[id].analysis);
+        chrome.tabs.onUpdated.removeListener(tabFaviconListener[id].analysis);
         delete tabFaviconListener[id];
     }
     favicons_stored = [];
@@ -98,10 +97,9 @@ function statusFaviconCrawler(id) {
 
 
 async function get_all_favicons() {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         const favicons = {};
-        let txn = db.transaction(["favicons"], 'readonly');
-        const objectStore = txn.objectStore("favicons");
+        const objectStore = await getFromDB(plugins_favicon, "favicons");
         objectStore.openCursor().onsuccess = function (event) {
             var cursor = event.target.result;
             if (cursor) {

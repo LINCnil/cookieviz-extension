@@ -1,4 +1,4 @@
-Extension CookieViz pour Firefox (Français)
+Extension CookieViz pour Chromium (Français)
 ===
 
 **L'extension CookieViz mesure l'impact des cookies sur votre propre navigateur.**
@@ -8,9 +8,9 @@ Cette extension Cookieviz analyse les interactions entre un navigateur et des si
 
 ## Utilisation
 
-L'extension CookieViz est disponible sur la [boutique d'applications de Firefox](https://addons.mozilla.org/fr/firefox/addon/cookieviz/).
+L'extension CookieViz est utilisable sur la plupart des navigateurs reposant sur le navigateur Chromium (Chrome, Opera, Brave, Edge, etc.). L'extension vise à termes à être distribuée sur les boutiques d'applications de ces navigateurs. Les liens vers ces boutiques seront disponibles sur cette page au fil des publications. Pour le navigateur Firefox, l'extension est déjà disponible sur sa [boutique d'application](https://addons.mozilla.org/fr/firefox/addon/cookieviz/).
 
-Il est également possible de l'installer depuis son code source en suivant la section "Pour une utilisation avancée" de l'[aide Firefox](https://support.mozilla.org/fr/kb/trouver-installer-modules-firefox).
+Il est possible d'installer l'extension depuis son code source. Les interfaces pour réaliser cette installation varient suivant les navigateurs, ils sont néanmoins dans l'ensemble assez similaires. Par exemple sur Chrome, vous pouvez utiliser l'adresse [chrome://extensions/](chrome://extensions/), activer le mode développeur et utiliser l'option "charger l'extension non empaquetée". 
 
 ## Contribuer
 
@@ -20,7 +20,7 @@ Il est également possible de l'installer depuis son code source en suivant la s
 
 Pour de plus amples informations, voir le fichier ``LICENSE`` inclus.
 
-# CookieViz Extension for Firefox (English)
+# CookieViz Extension for Chromium (English)
 
 **CookieViz is a vizualization tool allowing to view cookies impact on your browser.**
 
@@ -28,9 +28,9 @@ This Cookieviz extension analyzes interactions between a browser and third parti
 
 ## Usage
 
-The CookieViz extension is available on the [Firefox application store](https://addons.mozilla.org/fr/firefox/addon/cookieviz/).
+The CookieViz extension can be used on most browsers based on the Chromium browser (Chrome, Opera, Brave, Edge, etc.). The extension is intended to be distributed in the application stores of these browsers. Links to these stores will be available on this page as they are published. The extension is already available for [Firefox](https://addons.mozilla.org/fr/firefox/addon/cookieviz/).
 
-It is also possible to install it from its source code by following the "For advanced users" section of the [Firefox help](https://support.mozilla.org/en-US/kb/find-and-install-add-ons-add-features-to-firefox).
+It is possible to install the extension from its source code. The interfaces to carry out this installation vary according to the browsers, they are nevertheless on the whole quite similar. For example on Chrome, you can use the address [chrome://extensions/](chrome://extensions/), enable developer mode and use the "load unpackaged extension" option.
 
 ## Contribute
 **CookieViz is available under the terms of the GPLv3 license and can be enriched by any of its users.** The most experimented can improve this initial version of our tool or correct potential bugs. Don't forget to submit your contributions *via* pull-requests.

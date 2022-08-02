@@ -87,7 +87,9 @@ function Favicon(alt) {
   var protocolCount = protocols.length;
   var subdomainCount = subdomains.length;
   var pathCount = paths.length;
-  var anchor = document.createElement('a');
+  var anchor = null;
+  if (typeof document != "undefined")
+    anchor =  document.createElement('a');
   var undeclared = 'undefined';
 
   return this;

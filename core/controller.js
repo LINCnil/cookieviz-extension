@@ -1,10 +1,3 @@
-var filter_node = null;
-var nb_visited = 0;
-var nb_visited_with_cookie = 0;
-var nb_third = 0;
-var most_third = [0, 0];
-var rest_third = [0, 0];
-
 const DELAY = 1000;
 
 const loaded_plugins = {};
@@ -27,11 +20,16 @@ var nodes = [];
 var links = [];
 var updateViz_timeout = null;
 
-function clearGraph(){
-    //clearTimeout(updateViz_timeout);
+function clearGraph() {
+    clearTimeout(updateViz_timeout);
     nodes = [];
     links = [];
-    update_graph(node, link);
+    try {
+        update_graph(node, link);
+    } catch (e) {
+
+    }
+
     UpdateViz();
     updateViz_timeout = setTimeout(UpdateViz, 1);
 }
@@ -40,8 +38,8 @@ async function UpdateViz() {
     updateViz_timeout = null;
 
     const index = visited_list_expanded_div.selectedIndex;
-    let visited_site ="";
-    if (index != -1){
+    let visited_site = "";
+    if (index != -1) {
         visited_site = visited_list_expanded_div.options[index].text;
     }
 
@@ -73,7 +71,6 @@ async function UpdateViz() {
 
         updateViz_timeout = setTimeout(UpdateViz, DELAY);
     } catch (e) {
-        console.log(e.trace());
         console.log("update error : " + e + "!")
         updateViz_timeout = setTimeout(UpdateViz, DELAY);
     }
@@ -84,13 +81,13 @@ async function updateThirds() {
     let site = "";
     let timestamp = 0;
 
-    if (index != -1){
+    if (index != -1) {
         site = visited_list_div.options[index].text;
         timestamp = visited_list_div.options[index].value;
     }
 
     let nodes_with_cookies = await loaded_plugins.requests.nodes_requests_with_cookies_ordered_by_timestamp(timestamp, site);
-   
+
     nb_thirds_div.textContent = nodes_with_cookies.length;
     setTimeout(updateThirds, DELAY);
 }
@@ -113,11 +110,11 @@ async function updateNewCookies() {
     let site = "";
     let timestamp = 0;
 
-    if (index !=-1){
+    if (index != -1) {
         site = visited_list_div.options[index].text;
         timestamp = visited_list_div.options[index].value;
     }
-    
+
 
     const cookies_snapshot = await loaded_plugins.websites.cookie_thirds_snapshot(timestamp);
 
@@ -131,7 +128,7 @@ async function updateNewCookies() {
 
 var navigation = [];
 
-function populateNavigation(nav_liv,url) {
+function populateNavigation(nav_liv, url) {
     const unique_url = [...new Set(nav_liv.map(x => x.request_url))];
 
     unique_url.forEach(x => {
@@ -158,24 +155,28 @@ function cleanNavigation() {
 }
 
 Promise.all(loading).then(async (modules) => {
-    await initDb(modules);
-    browser.tabs.query({ currentWindow: true, active: true })
-        .then((tabs) => {
-            let tab = tabs[0];
-            browser.runtime.sendMessage({
-                type: 'status',
-                id: tab.id
-            }).then((message) => {
-                playPause.className = message.active ? "pause" : "play";
-                if (message.extended) more.click();
-            }, message_error);
+    import("../core/database.js").then(module => {
+        module.initDb(modules).then(db => {
 
-            loaded_plugins.websites.visited_list().then((visited_list)=>{
-                populateNavigation(visited_list, tab.url);
+            chrome.tabs.query({ 'currentWindow': true, 'active': true },
+                function (tabs) {
+                    let tab = tabs[0];
+                    chrome.runtime.sendMessage({
+                        'type': 'status',
+                        'id': tab.id
+                    }, function (message) {
+                        playPause.className = message.active ? "pause" : "play";
+                        if (message.extended) more.click();
+                    });
 
-                updateThirds();
-                updateDistrib();
-                updateNewCookies();
-            });
-        }, message_error);
+                    loaded_plugins.websites.visited_list().then((visited_list) => {
+                        populateNavigation(visited_list, tab.url);
+
+                        updateThirds();
+                        updateDistrib();
+                        updateNewCookies();
+                    });
+                });
+        });
+    })
 });

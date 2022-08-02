@@ -4,7 +4,7 @@
         "description": "web extension for Cookieviz."
     },
     "extensionDescription": {
-        "message": "CookieViz analyzes the interactions between your web browser and the remote servers and websites. You will be able to know to which other player the site you're visiting sends information.",
+        "message": "CookieViz analyzes the interactions between your web browser and the remote servers and websites.",
         "description": "Description of the extension."
     },
     "navigate": {

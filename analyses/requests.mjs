@@ -1,6 +1,9 @@
-import('../js/psl.js');
+import "../js/psl.js"
+import {WriteToDb,getFromDB} from "../core/database.js"
 
 const tabEventListener = {}
+
+var nwjsBrowser = chrome.webRequest;
 
 // Requests tables forms
 const requests_table_column = {
@@ -78,14 +81,17 @@ function processRequest(requestdetails) {
 
     const referer = 'referer' in headers ? new URL(headers['referer']).hostname : null;
 
-    WriteToDb("request_table", { page: current_page, url: new URL(requestdetails.url).hostname, referer: referer, cookie: headers['cookie'], timestamp: requestdetails.timeStamp });
+    WriteToDb(requests, "request_table", { page: current_page, url: new URL(requestdetails.url).hostname, referer: referer, cookie: headers['cookie'], timestamp: requestdetails.timeStamp });
 }
 
 const CSS = "body { border: 5px solid #fa4564; }";
 
 function initRequestsCrawler(id, url) {
+    let full_url = new URL(url);
+    let host = psl.parse(full_url.hostname).domain;
+
     tabEventListener[id] = {
-        current_page: new URL(url),
+        current_page: host,
         new_page: null,
         analysis: function (requestdetails) {
             processRequest(requestdetails);
@@ -94,38 +100,39 @@ function initRequestsCrawler(id, url) {
                 let full_url = new URL(changeInfo.url);
                 let host = psl.parse(full_url.hostname).domain;
 
+                if (!(tabId in tabEventListener)) tabEventListener[tabId] = {};
                 tabEventListener[tabId].current_page = host;
-                browser.tabs.insertCSS({code: CSS});
-                browser.browserAction.setIcon({
-                    path: "icons/record.svg",
+                chrome.action.setIcon({
+                    path:  {
+                        16 : "../icons/record-16.png",
+                        32 : "../icons/record-32.png",
+                        64 : "../icons/record-64.png",
+                        128 : "../icons/record-128.png"
+                    },
                     tabId: tabId
                 });
             }
         }, delete: function (tabId) { 
-            browser.tabs.removeCSS({code: CSS});
+
         }
     };
 
-    browser.tabs.insertCSS({code: CSS});
 
     // Read cookie
     nwjsBrowser.onBeforeSendHeaders.addListener(tabEventListener[id].analysis, {
         urls: ["*://*/*"],
         tabId: id
-        //}, ['requestHeaders', 'extraHeaders'] chrome
-    }, ['requestHeaders']
+        }, ['requestHeaders', 'extraHeaders']
     );
 
-    browser.tabs.onUpdated.addListener(tabEventListener[id].updated, {
-        tabId: id
-    });
+    chrome.tabs.onUpdated.addListener(tabEventListener[id].updated);
 }
 
 function deleteRequestsCrawler(id) {
     if (tabEventListener[id]) {
         tabEventListener[id].delete(id);
         nwjsBrowser.onBeforeSendHeaders.removeListener(tabEventListener[id].analysis);
-        browser.tabs.onUpdated.removeListener(tabEventListener[id].updated);
+        chrome.tabs.onUpdated.removeListener(tabEventListener[id].updated);
         delete tabEventListener[id];
     }
 }
@@ -136,13 +143,9 @@ function statusRequestsCrawler(id) {
 
 function getNodes(table, index) {
     return new Promise((resolve, reject) => {
-        if (!db) resolve([]);
-
-        let txn = db.transaction([table], 'readonly');
-
         function get_requested() {
-            return new Promise((resolve, reject) => {
-                const objectStore = txn.objectStore(table);
+            return new Promise(async (resolve, reject) => {
+                const objectStore = await getFromDB(requests, table);
 
                 if (index) {
                     objectStore = objectStore.index(index);
@@ -179,14 +182,9 @@ function getNodes(table, index) {
 }
 
 function getAllNodes(table, index, with_cookies, filter) {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
+        let pageIndex = await getFromDB(requests, table,'page');
 
-        if (!db) resolve([]);
-
-        let txn = db.transaction([table], 'readonly');
-        let objectStore = txn.objectStore(table);
-
-        let pageIndex = objectStore.index('page');
         let getRequest = pageIndex.getAll(filter);
         let visited = new Set();
         let nodes = new Set();
@@ -213,12 +211,9 @@ function getAllNodes(table, index, with_cookies, filter) {
     });
 }
 function getAllNodesByTimestamp(table, index, with_cookies, timestamps, filter) {
-    return new Promise((resolve, reject) => {
-        if (!db) resolve([]);
-
+    return new Promise(async (resolve, reject) => {
         let keyRangeValue = IDBKeyRange.lowerBound(Number(timestamps));
-        let txn = db.transaction([table], 'readonly');
-        let objectStore = txn.objectStore(table).index("timestamp");
+        let objectStore = await getFromDB(requests, table,"timestamp");
 
 
         let nodes = new Set();
@@ -249,14 +244,10 @@ function getAllNodesByTimestamp(table, index, with_cookies, timestamps, filter) 
 }
 
 function getLinks(table, index, filter) {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
 
-        if (!db) resolve([]);
+        let pageIndex = await getFromDB(requests, table,'page');
 
-        let txn = db.transaction([table], 'readonly');
-        let objectStore = txn.objectStore(table);
-
-        let pageIndex = objectStore.index('page');
         let getRequest = pageIndex.getAll(filter);
 
         getRequest.onsuccess = function () {
@@ -287,11 +278,10 @@ function getLinks(table, index, filter) {
 }
 
 function distrib(table, index) {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         const reverse_map = {};
 
-        let txn = db.transaction([table], 'readonly');
-        const objectStore = txn.objectStore(table).index(index);
+        const objectStore = await getFromDB(requests, table,index);
 
         objectStore.openCursor().onsuccess = function (event) {
             const cursor = event.target.result;

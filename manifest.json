@@ -1,26 +1,24 @@
 {
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "1.6",
-  "manifest_version": 2,
-  "background": {
-    "scripts": [
-      "browser.config.js",
-      "core/plugins.js",
-      "core/database.js",
-      "core/background.js"
-    ]
-  },
+  "version": "1.7",
+  "manifest_version": 3,
   "permissions": [
     "browsingData",
     "cookies",
-    "activeTab",
     "webRequest",
     "storage",
-    "<all_urls>",
     "tabs"
   ],
-  "browser_action": {
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "background": {
+    "service_worker": "core/background.js",
+    "type": "module"
+  },
+  "minimum_chrome_version": "92",
+  "action": {
     "browser_style": true,
     "default_popup": "popup.html",
     "default_icon": "icons/cookie-viz-favicon.png"

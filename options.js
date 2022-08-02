@@ -12,7 +12,7 @@ function updateButtons(state){
 }
 
 function saveOptions(e) {
-  browser.storage.local.set({
+  chrome.storage.local.set({
     analysis: typeScan.value
   });
   e.preventDefault();
@@ -20,7 +20,7 @@ function saveOptions(e) {
 }
 
 function restoreOptions() {
-  var gettingItem = browser.storage.local.get('analysis');
+  var gettingItem = chrome.storage.local.get('analysis');
   gettingItem.then((res) => {
     typeScan.value = res.analysis || 'by_tab';
     updateButtons(typeScan.value);
@@ -31,7 +31,7 @@ function localizeHtmlPage()
 {
     var items = document.getElementsByClassName('translate');
     for (let item of items) {
-      item.innerText = browser.i18n.getMessage(item.id);
+      item.innerText = chrome.i18n.getMessage(item.id);
     }
 }
 
@@ -49,12 +49,12 @@ function showVisitButton(){
     var reader = new FileReader();
     reader.onload = function(progressEvent){
       var fileContentArray = this.result.split(/\r\n|\n/);
-      browser.runtime.sendMessage({
-        type: "visit",
-        url:fileContentArray
-      }).then((message) => {
+      chrome.runtime.sendMessage({
+        'type': 'visit',
+        'url':fileContentArray
+      }, function (message) {
         console.log(message)
-      }, message_error);
+      });
     };
     reader.readAsText(ffile);
   }
@@ -81,9 +81,3 @@ document.addEventListener('DOMContentLoaded', function(){
   localizeHtmlPage();
   typeScan.addEventListener("change", saveOptions);
 });
-
-
-
-function test(){
-
-}

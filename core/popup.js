@@ -50,13 +50,12 @@ const gear = document.getElementById('gear');
 const information = document.getElementById('information');
 const informationContents = document.getElementById('informationContents');
 const xMark = document.getElementById('xMark');
-const frame = document.getElementById('frame') ;
+const frame = document.getElementById('frame');
 const xMarkinfo = document.getElementById('xMarkinfo');
 
+var browser = chrome;
+
 function show_viz() {
-  if (updateViz_timeout) {
-    clearTimeout(updateViz_timeout);
-  }
 
   if (getComputedStyle(hide).display != "none") {
     hide.style.display = "none";
@@ -91,7 +90,7 @@ mesDroits.addEventListener("click", () => {
     mesDroitsContents.style.display = 'block';
     mesDroits.className = "active";
     maNavigation.className = "inactive";
-    informationContents.style.display ='none';
+    informationContents.style.display = 'none';
   }
 
 
@@ -106,7 +105,7 @@ maNavigation.addEventListener("click", () => {
     mesDroits.className = "inactive";
     maNavigation.className = "active";
     largeFrameDroits.style.display = "none";
-    informationContents.style.display ='none';
+    informationContents.style.display = 'none';
   }
 })
 
@@ -205,10 +204,10 @@ function message_error(error) {
 }
 
 function updateButtons() {
-  browser.tabs.query({ currentWindow: true, active: true })
+  chrome.tabs.query({ currentWindow: true, active: true })
     .then((tabs) => {
       let tab = tabs[0];
-      browser.runtime.sendMessage({
+      chrome.runtime.sendMessage({
         type: 'status',
         id: tab.id
       }).then((message) => {
@@ -224,19 +223,19 @@ playPause.addEventListener('click', function () {
 
     queryOption = typeScan== 'all_tab'?{}:{ currentWindow: true, active: true };
 
-    browser.tabs.query(queryOption)
-    .then((tabs) => {
-      for (let tab of tabs) {
-        browser.runtime.sendMessage({
-          type: playPause.className,
-          id: tab.id,
-          url: tab.url,
-          typeScan:typeScan
-        }).then((message) => {
-          updateButtons();
-        }, message_error);
-      }
-    }, message_error);
+    chrome.tabs.query(queryOption)
+      .then((tabs) => {
+        for (let tab of tabs) {
+          chrome.runtime.sendMessage({
+            type: playPause.className,
+            id: tab.id,
+            url: tab.url,
+            typeScan:typeScan  
+          }).then((message) => {
+            updateButtons();
+          }, message_error);
+        }
+      }, message_error);
   });
 });
 
@@ -251,7 +250,7 @@ clear_data.addEventListener('click', function () {
     podium_div[i].innerHTML = "";
   }
   clearGraph();
-  browser.runtime.sendMessage({
+  chrome.runtime.sendMessage({
     type: "clear"
   }).then((message) => {
   }, message_error);
@@ -261,13 +260,13 @@ lessMore.addEventListener('click', function () {
   if (lessMore.className == "more") {
     lessMore.className = "less";
     document.body.style.width = "800px";
-    browser.runtime.sendMessage({
+    chrome.runtime.sendMessage({
       type: 'extend'
     });
   } else {
     lessMore.className = "more";
     document.body.style.width = "329px";
-    browser.runtime.sendMessage({
+    chrome.runtime.sendMessage({
       type: 'reduce'
     });
   }
@@ -296,13 +295,13 @@ visited_list_expanded_div.addEventListener('click', function () {
 
 information.addEventListener("click", () => {
   {
-   generalContents.style.display = 'none';
-   mesDroitsContents.style.display='none';
-   informationContents.style.display = 'block'; 
- }
+    generalContents.style.display = 'none';
+    mesDroitsContents.style.display = 'none';
+    informationContents.style.display = 'block';
+  }
 
- 
- 
+
+
 
 })
 
@@ -311,43 +310,44 @@ gear.addEventListener("click", () => {
 })
 
 xMark.addEventListener('click', function () {
- 
-  { 
-    informationContents.display='none';
-   }
 
-   if (maNavigation.className=='active'){
-    generalContents.style.display='block';
-    mesDroitsContents.style.display='none';
-  
-    }
-  
-   else {
-    generalContents.style.display='none';
-    mesDroitsContents.style.display='block';
-  
-   }
+  {
+    informationContents.display = 'none';
+  }
 
-  } )
+  if (maNavigation.className == 'active') {
+    generalContents.style.display = 'block';
+    mesDroitsContents.style.display = 'none';
 
-  xMarkinfo.addEventListener('click', function () {
- 
-    { informationContents.style.display='none';
-     }
-  
-     if (maNavigation.className=='active'){
-      generalContents.style.display='block';
-      mesDroitsContents.style.display='none';
-    
-      }
-    
-     else {
-      generalContents.style.display='none';
-      mesDroitsContents.style.display='block';
-    
-     }
-  
-    } )
+  }
+
+  else {
+    generalContents.style.display = 'none';
+    mesDroitsContents.style.display = 'block';
+
+  }
+
+})
+
+xMarkinfo.addEventListener('click', function () {
+
+  {
+    informationContents.style.display = 'none';
+  }
+
+  if (maNavigation.className == 'active') {
+    generalContents.style.display = 'block';
+    mesDroitsContents.style.display = 'none';
+
+  }
+
+  else {
+    generalContents.style.display = 'none';
+    mesDroitsContents.style.display = 'block';
+
+  }
+
+})
 
 
 zoomPlus.addEventListener('click', function () {
@@ -356,24 +356,23 @@ zoomPlus.addEventListener('click', function () {
 
 zoomMoins.addEventListener('click', function () {
   zoom_handler.scaleBy(svg.transition().duration(750), .5);
- });
+});
 
- hand.addEventListener('click', function () {
-   const large_frame = document.getElementById("large_frame");
-   large_frame.style.cursor = large_frame.style.cursor == "grab"?  "default": "grab";
- });
-      
-function localizeHtmlPage()
-{
-    let i18ncode = browser.i18n.getUILanguage().substring(0, 2)
-    var items = document.getElementsByClassName('translate');
-    for (let item of items) {
-      if (item.tagName == "IFRAME"){
-        item.src = "_locales/"+i18ncode+"/"+item.getAttribute("translatesrc");
-      }else{
-        item.innerText = browser.i18n.getMessage(item.id);
-      }
+hand.addEventListener('click', function () {
+  const large_frame = document.getElementById("large_frame");
+  large_frame.style.cursor = large_frame.style.cursor == "grab" ? "default" : "grab";
+});
+
+function localizeHtmlPage() {
+  let i18ncode = chrome.i18n.getUILanguage().substring(0, 2)
+  var items = document.getElementsByClassName('translate');
+  for (let item of items) {
+    if (item.tagName == "IFRAME") {
+      item.src = "_locales/" + i18ncode + "/" + item.getAttribute("translatesrc");
+    } else {
+      item.innerText = chrome.i18n.getMessage(item.id);
     }
+  }
 }
 
 localizeHtmlPage();

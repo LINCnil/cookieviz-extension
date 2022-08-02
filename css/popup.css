@@ -189,11 +189,11 @@ text-decoration-color: #fa4564;
 /*structure*/ 
 
 .conteneur-grid{
-display: grid ;
+ display: grid ;
 /* border: 1px dashed black; */
 grid-template-columns:  328px 472px  ;
 grid-template-rows: 40px 420px 50px ;
-float: right;
+/*float: right;*/
 }
 
 

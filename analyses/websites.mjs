@@ -1,5 +1,7 @@
 //const { parseAdsTxt } = require('ads.txt');
-import('../js/psl.js');
+import"../js/psl.js";
+import {WriteToDb, getFromDB} from "../core/database.js"
+import {initDb} from "../core/database.js"
 
 const tabWebsiteListener = {};
 
@@ -16,12 +18,8 @@ var index = null;
 
 // Data handling
 function getVisitedList(){
-    if (!db) return;
-
-    let txn = db.transaction(["websites_visited"], 'readonly');
-
-    return new Promise((resolve, reject) => {
-        const objectStore = txn.objectStore("websites_visited");
+    return new Promise(async (resolve, reject) => {
+        const objectStore = await getFromDB(websites, "websites_visited");
 
         let urls = [];
 
@@ -38,13 +36,11 @@ function getVisitedList(){
 }
 
 function cookie_snapshot(timestamps){
-    if (!db) return;
-
-    let keyRangeValue = IDBKeyRange.only(Number(timestamps));
-    let txn = db.transaction(["websites_visited"], 'readonly');
-    let objectStore = txn.objectStore("websites_visited").index("timestamp");
+    return new Promise(async (resolve, reject) => {
+        let keyRangeValue = IDBKeyRange.only(Number(timestamps));
+        let objectStore = await getFromDB(websites, "websites_visited","timestamp");
     
-    return new Promise((resolve, reject) => {
+
         objectStore.openCursor(keyRangeValue).onsuccess = function (event) {
             const cursor = event.target.result;
             if (cursor) {
@@ -58,12 +54,8 @@ function cookie_snapshot(timestamps){
 }
 
 function getAds() {
-    if (!db) return;
-
-    let txn = db.transaction(["websites_adstxt"], 'readonly');
-
     return new Promise((resolve, reject) => {
-        const objectStore = txn.objectStore("websites_adstxt");
+        const objectStore = getFromDB(websites, "websites_adstxt");
 
         let ads = [];
 
@@ -87,7 +79,7 @@ function storeAdsTxt(url){
           response.text().then(function(ads_txt) {
             let { variables, fields } = parseAdsTxt(ads_txt);
             fields.forEach(field => {
-                WriteToDb("websites_adstxt", {domain: field.domain, publisherAccountID: field.publisherAccountID, accountType: field.accountType, certificateAuthorityID: field.certificateAuthorityID});
+                WriteToDb(websites, "websites_adstxt", {domain: field.domain, publisherAccountID: field.publisherAccountID, accountType: field.accountType, certificateAuthorityID: field.certificateAuthorityID});
             });
           });
         }
@@ -101,7 +93,7 @@ function storeAdsTxt(url){
 function website_loaded(url, tabId, cookies, timestamp){
     let full_url= new URL(url);
     let host = psl.parse(full_url.hostname).domain;
-    WriteToDb("websites_visited", {request_url:host, full_url:full_url.href, tabId:tabId, cookies:cookies, timestamp:timestamp});
+    WriteToDb(websites, "websites_visited", {request_url:host, full_url:full_url.href, tabId:tabId, cookies:cookies, timestamp:timestamp});
 
     //Check if ads.txt/app-ads.txt is present
     //let host_name = full_url.protocol+'//'+host;
@@ -113,20 +105,18 @@ function initWebsitesAnalyses(id, url){
     tabWebsiteListener[id] = {
         updated: function (tabId, changeInfo, tabInfo) {
             if (changeInfo.status == "loading" && changeInfo.url){
-                browser.cookies.getAll({}).then((cookies)=> website_loaded(changeInfo.url, tabId, cookies, Date.now()));
+                chrome.cookies.getAll({}, function (cookies){website_loaded(changeInfo.url, tabId, cookies, Date.now())});
             }
         }
     };
 
-    browser.tabs.onUpdated.addListener(tabWebsiteListener[id].updated, {
-        tabId: id
-        //}, ['requestHeaders', 'extraHeaders'] chrome
-    });
+    chrome.tabs.onUpdated.addListener(tabWebsiteListener[id].updated);
+    chrome.cookies.getAll({}, function (cookies){website_loaded(url, id, cookies, Date.now())});
 }
 
 function deleteWebsitesAnalyses(id){
     if (tabWebsiteListener[id]) {
-        browser.tabs.onUpdated.removeListener(tabWebsiteListener[id].updated);
+        chrome.tabs.onUpdated.removeListener(tabWebsiteListener[id].updated);
         delete tabWebsiteListener[id];
     }
     website = null;
