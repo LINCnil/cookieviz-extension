@@ -8,7 +8,7 @@ Cette extension Cookieviz analyse les interactions entre un navigateur et des si
 
 ## Utilisation
 
-L'extension CookieViz est disponible sur la [boutique d'applications de Firefox](https://addons.mozilla.org/fr/firefox/addon/cookieviz/). Pour les navigateurs reposant sur Chromium (Chrome, Edge, Brave, etc.), le code source est disponible sur la branche [Chromium](https://github.com/LINCnil/cookieviz_extension/tree/Chromium).
+L'extension CookieViz est disponible sur la [boutique d'applications de Firefox](https://addons.mozilla.org/fr/firefox/addon/cookieviz/). Pour les navigateurs reposant sur Chromium (Chrome, Edge, Brave, etc.), le code source est disponible sur la branche [Chromium](https://github.com/LINCnil/cookieviz-extension/tree/Chromium).
 
 Il est également possible de l'installer depuis son code source en suivant la section "Pour une utilisation avancée" de l'[aide Firefox](https://support.mozilla.org/fr/kb/trouver-installer-modules-firefox).
 
@@ -30,7 +30,7 @@ This Cookieviz extension analyzes interactions between a browser and third parti
 
 The CookieViz extension is available on the [Firefox application store](https://addons.mozilla.org/fr/firefox/addon/cookieviz/).
 
-It is also possible to install it from its source code by following the "For advanced users" section of the [Firefox help](https://support.mozilla.org/en-US/kb/find-and-install-add-ons-add-features-to-firefox). For browsers based on Chromium (Chrome, Edge, Brave, etc.), the source code is available on [Chromium](https://github.com/LINCnil/cookieviz_extension/tree/Chromium) branch.
+It is also possible to install it from its source code by following the "For advanced users" section of the [Firefox help](https://support.mozilla.org/en-US/kb/find-and-install-add-ons-add-features-to-firefox). For browsers based on Chromium (Chrome, Edge, Brave, etc.), the source code is available on [Chromium](https://github.com/LINCnil/cookieviz-extension/tree/Chromium) branch.
 
 ## Contribute
 **CookieViz is available under the terms of the GPLv3 license and can be enriched by any of its users.** The most experimented can improve this initial version of our tool or correct potential bugs. Don't forget to submit your contributions *via* pull-requests.
