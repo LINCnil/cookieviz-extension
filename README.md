@@ -8,7 +8,7 @@ Cette extension Cookieviz analyse les interactions entre un navigateur et des si
 
 ## Utilisation
 
-L'extension CookieViz est utilisable sur la plupart des navigateurs reposant sur le navigateur Chromium (Chrome, Opera, Brave, Edge, etc.). L'extension vise à termes à être distribuée sur les boutiques d'applications de ces navigateurs. Les liens vers ces boutiques seront disponibles sur cette page au fil des publications. Pour le navigateur Firefox, l'extension est déjà disponible sur sa [boutique d'application](https://addons.mozilla.org/fr/firefox/addon/cookieviz/).
+L'extension CookieViz est utilisable sur la plupart des navigateurs reposant sur le navigateur Chromium (Chrome, Opera, Brave, Edge, etc.). L'extension est disponible sur la boutique d'application [Chrome](https://chrome.google.com/webstore/detail/cookieviz-extension/cennahpkibnnoondjanpckloaknjhiid) et vise à termes à être distribuée sur les boutiques d'applications de ces navigateurs. Les liens vers ces boutiques seront disponibles sur cette page au fil des publications. Pour le navigateur Firefox, l'extension est déjà disponible sur sa [boutique d'application](https://addons.mozilla.org/fr/firefox/addon/cookieviz/).
 
 Il est possible d'installer l'extension depuis son code source. Les interfaces pour réaliser cette installation varient suivant les navigateurs, ils sont néanmoins dans l'ensemble assez similaires. Par exemple sur Chrome, vous pouvez utiliser l'adresse [chrome://extensions/](chrome://extensions/), activer le mode développeur et utiliser l'option "charger l'extension non empaquetée". 
 
